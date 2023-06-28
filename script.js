@@ -18,25 +18,34 @@ document.querySelector('.check').addEventListener('click',function(){
         }
 
     }
-    else if(number>hide_number){
-        document.querySelector('.message').textContent='Too high';
+    else if(number!=hide_number){
+        document.querySelector('.message').textContent=number>hide_number?'Too high':'Too Low';
         count--;
         if(count>=0){
         document.querySelector('.score').textContent=count;}
         else{
         count=0;
         }
+    }
+    // else if(number>hide_number){
+    //     document.querySelector('.message').textContent='Too high';
+    //     count--;
+    //     if(count>=0){
+    //     document.querySelector('.score').textContent=count;}
+    //     else{
+    //     count=0;
+    //     }
 
-    }
-    else if(number<hide_number){
-        document.querySelector('.message').textContent='Too low';
-        count--;
-        if(count>=0){
-        document.querySelector('.score').textContent=count;}
-        else{
-            count=0;
-        }
-    }
+    // }
+    // else if(number<hide_number){
+    //     document.querySelector('.message').textContent='Too low';
+    //     count--;
+    //     if(count>=0){
+    //     document.querySelector('.score').textContent=count;}
+    //     else{
+    //         count=0;
+    //     }
+    // }
 });
 document.querySelector('.again').addEventListener('click',function(){
     hide_number=Math.trunc(Math.random()*20)+1;
